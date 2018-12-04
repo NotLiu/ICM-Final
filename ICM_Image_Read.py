@@ -1,7 +1,7 @@
 import os,sys
 from PIL import Image
 
-img = Image.open('Tiara.png','r')
+img = Image.open('Andrew.jpg','r')
 
 pix_val = list(img.getdata())
 
