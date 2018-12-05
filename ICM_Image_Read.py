@@ -1,5 +1,14 @@
 import os,sys
 from PIL import Image
+from operator import add
+from pylab import *
+import librosa             # The librosa library
+import librosa.display     # librosa's display module (for plotting features)
+import IPython.display     # IPython's display module (for in-line audio)
+import matplotlib.pyplot as plt # matplotlib plotting functions
+import matplotlib.style as ms   # plotting style
+import numpy as np
+
 
 img = Image.open('Andrew.jpg','r')
 
