@@ -28,8 +28,8 @@ for i in pix_val: #(1,2,3)
         index += 1
 
 for i in d1:
-    for j in i:
-        pix_sum += 1
+    for j in d1[i]:
+        pix_sum += d1[i][j]
 
 #R,G,B value sums
 
@@ -49,7 +49,6 @@ for i in d1:
             b_sum += d1[i][j]*j
 
 
-print('All pixel RGB data:\n')
 print(pix_val,'\n')
 
 #print(d) #number of each number value among RGB
@@ -58,13 +57,13 @@ print('Number of each R value:')
 for i in d1:
     print(i,':',d1[i])
 
-print('Sum of Red values: ')
+print('\nSum of Red values: ')
 print(r_sum)
 
-print('Sum of Green values: ')
+print('\nSum of Green values: ')
 print(g_sum)
 
-print('Sum of Blue values: ')
+print('\nSum of Blue values: ')
 print(b_sum)
 
-print('Number of Pixels:',pix_sum//3)
+print('\nNumber of Pixels:',pix_sum//3)
