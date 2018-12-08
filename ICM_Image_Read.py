@@ -8,9 +8,10 @@ import IPython.display     # IPython's display module (for in-line audio)
 import matplotlib.pyplot as plt # matplotlib plotting functions
 import matplotlib.style as ms   # plotting style
 import numpy as np
+import random
 
 
-img = Image.open('Andrew.jpg','r')
+img = Image.open('Brush.png','r')
 
 pix_val = list(img.getdata())
 
@@ -76,3 +77,20 @@ print('\nSum of Blue values: ')
 print(b_sum)
 
 print('\nNumber of Pixels:',pix_sum//3)
+
+def cos_wave(A, f, t, sr):
+    return [A * cos(2*pi*f*t) for t in arange(0.,t,1./sr)]
+
+f0 = pix_sum//10000;
+
+yy = []
+for i in pix_val:
+    if max(i) == i[0]: #biggest value of pixel is Red
+        y = cos_wave(random.random(), i[0], random.random(), f0)
+    if max(i) == i[1]:  # biggest value of pixel is Blue
+        y = cos_wave(random.random(), i[1], random.random(), f0)
+    if max(i) == i[2]:  # biggest value of pixel is Green
+        y = cos_wave(random.random(), i[2], random.random(), f0)
+    yy = yy + y
+
+IPython.display.Audio(data=yy, rate=4410)
